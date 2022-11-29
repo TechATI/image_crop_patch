@@ -130,6 +130,7 @@ class CropState extends State<Crop> with TickerProviderStateMixin, Drag {
     super.didChangeDependencies();
 
     _getImage();
+    widget.image.evict();
   }
 
   @override
@@ -153,6 +154,7 @@ class CropState extends State<Crop> with TickerProviderStateMixin, Drag {
         _deactivate();
       }
     }
+    widget.image.evict();
   }
 
   void _getImage({bool force = false}) {
